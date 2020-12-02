@@ -20,6 +20,10 @@ def read_file_int(filename):
     return map(int, read_file(filename))
 
 
+def xor(a, b):
+    return bool(a) ^ bool(b)
+
+
 if __name__ == "__main__":
     print(manhattan_distance(Point2d(1, 2), Point2d(3, 4)))
     print(manhattan_distance(Point3d(1, 2, 3), Point3d(4, 5, 6)))
