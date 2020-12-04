@@ -21,9 +21,9 @@ def is_password_valid2(row):
 
 print("#--- part1 ---#")
 
-assert is_password_valid("1-3 a: abcde") == True
-assert is_password_valid("1-3 b: cdefg") == False
-assert is_password_valid("2-9 c: ccccccccc") == True
+assert is_password_valid("1-3 a: abcde") is True
+assert is_password_valid("1-3 b: cdefg") is False
+assert is_password_valid("2-9 c: ccccccccc") is True
 
 
 print(sum([is_password_valid(row) for row in read_file("02.txt")]))
@@ -31,8 +31,8 @@ print(sum([is_password_valid(row) for row in read_file("02.txt")]))
 
 print("#--- part2 ---#")
 
-assert is_password_valid2("1-3 a: abcde") == True
-assert is_password_valid2("1-3 b: cdefg") == False
-assert is_password_valid2("2-9 c: ccccccccc") == False
+assert is_password_valid2("1-3 a: abcde") is True
+assert is_password_valid2("1-3 b: cdefg") is False
+assert is_password_valid2("2-9 c: ccccccccc") is False
 
 print(sum([is_password_valid2(row) for row in read_file("02.txt")]))
