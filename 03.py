@@ -14,7 +14,7 @@ def count_trees(map_, x, y, dx, dy):
         return 0 + count_trees(map_, x + dx, y + dy, dx, dy)
 
 
-print("#--- part1 ---#")
+print("#--- Toboggan Trajectory: part1 ---#")
 
 map_ = [
     "..##.......",
@@ -34,7 +34,7 @@ assert count_trees(map_, 0, 0, 3, 1) == 7
 print(count_trees(read_file("03.txt"), 0, 0, 3, 1))
 
 
-print("#--- part2 ---#")
+print("#--- Toboggan Trajectory: part2 ---#")
 
 deltas = [
     (1, 1),

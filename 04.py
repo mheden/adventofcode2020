@@ -86,7 +86,7 @@ def is_valid2(passport):
     )
 
 
-print("#--- part1 ---#")
+print("#--- Passport Processing: part1 ---#")
 
 data = [
     "ecl:gry pid:860033327 eyr:2020 hcl:#fffffd byr:1937 iyr:2017 cid:147 hgt:183cm",
@@ -99,7 +99,7 @@ assert sum([is_valid(passport) for passport in data]) == 2
 print(sum([is_valid(passport) for passport in read_file("04.txt")]))
 
 
-print("#--- part2 ---#")
+print("#--- Passport Processing: part2 ---#")
 
 invalid = [
     "eyr:1972 cid:100 hcl:#18171d ecl:amb hgt:170 pid:186cm iyr:2018 byr:1926",

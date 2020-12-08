@@ -19,7 +19,7 @@ def is_password_valid2(row):
     return (password[pos1 - 1] == letter) != (password[pos2 - 1] == letter)
 
 
-print("#--- part1 ---#")
+print("#--- Password Philosophy: part1 ---#")
 
 assert is_password_valid("1-3 a: abcde") is True
 assert is_password_valid("1-3 b: cdefg") is False
@@ -29,7 +29,7 @@ assert is_password_valid("2-9 c: ccccccccc") is True
 print(sum([is_password_valid(row) for row in read_file("02.txt")]))
 
 
-print("#--- part2 ---#")
+print("#--- Password Philosophy: part2 ---#")
 
 assert is_password_valid2("1-3 a: abcde") is True
 assert is_password_valid2("1-3 b: cdefg") is False

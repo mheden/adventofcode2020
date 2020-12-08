@@ -20,7 +20,7 @@ def decode_seat(seat):
     return xmin * 8 + ymin
 
 
-print("#--- part1 ---#")
+print("#--- Binary Boarding: part1 ---#")
 
 assert decode_seat("FBFBBFFRLR") == 357
 assert decode_seat("BFFFBBFRRR") == 567
@@ -30,7 +30,7 @@ assert decode_seat("BBFFBBFRLL") == 820
 print(max([decode_seat(s) for s in read_file("05.txt")]))
 
 
-print("#--- part2 ---#")
+print("#--- Binary Boarding: part2 ---#")
 
 ids = sorted(set([decode_seat(s) for s in read_file("05.txt")]))
 lastid = None
