@@ -1,39 +1,35 @@
 from utils import read_file
-import networkx as nx
+from dag import DAG
 import re
 
 RE_CONTAIN = re.compile(r"^(\d+)\s(.+) bag")
 
 
 def get_bags(data):
-    weights = dict()
-    graph = nx.DiGraph()
+    dag = DAG()
     for line in data:
         bag, contains = line.split(" bags contain ")
         for c in contains.split(","):
             m = RE_CONTAIN.match(c.strip())
             if m:
-                graph.add_edge(bag, m.group(2))
-                weights[(bag, m.group(2))] = int(m.group(1))
-    return graph, weights
+                dag.add_edge(bag, m.group(2), int(m.group(1)))
+    return dag
 
 
 def part1(data, node):
-    graph, _ = get_bags(data)
-    return len(nx.ancestors(graph, node))
+    dag = get_bags(data)
+    return len(dag.ancestors(node))
 
 
 def part2(data, node):
-    graph, weights = get_bags(data)
-
     def weight_subtree(graph, node):
         weight = 1
-        if len(graph.succ[node]) != 0:
-            for child in graph.succ[node]:
-                weight += weights[(node, child)] * weight_subtree(graph, child)
+        for successor in dag.successors(node):
+            weight += dag.edge_weight(node, successor) * weight_subtree(dag, successor)
         return weight
 
-    return weight_subtree(graph, node) - 1
+    dag = get_bags(data)
+    return weight_subtree(dag, node) - 1
 
 
 print("#--- Handy Haversacks: part1 ---#")
