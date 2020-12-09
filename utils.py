@@ -7,7 +7,7 @@ Point3d = namedtuple("Point3d", ["x", "y", "z"])
 
 
 def manhattan_distance(p0, p1):
-    return sum([abs(a - b) for a, b in zip(p0, p1)])
+    return sum(abs(a - b) for a, b in zip(p0, p1))
 
 
 def read_file(filename):
@@ -17,7 +17,7 @@ def read_file(filename):
 
 
 def read_file_int(filename):
-    return map(int, read_file(filename))
+    return list(map(int, read_file(filename)))
 
 
 def read_file_groups(filename):
@@ -31,13 +31,6 @@ def read_file_groups(filename):
 def xor(a, b):
     return bool(a) ^ bool(b)
 
-
-if __name__ == "__main__":
-    # print(manhattan_distance(Point2d(1, 2), Point2d(3, 4)))
-    # print(manhattan_distance(Point3d(1, 2, 3), Point3d(4, 5, 6)))
-
-    import pprint
-    pprint.pprint(read_file_groups('06.txt'))
 
 # TODO:
 # - Grid

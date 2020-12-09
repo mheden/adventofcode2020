@@ -27,7 +27,6 @@ def part2(data, keylen, value):
 
 print("#--- Encoding Error: part1 ---#")
 
-
 data = [
     35,
     20,
@@ -50,7 +49,6 @@ data = [
     309,
     576,
 ]
-
 
 assert part1(data, 5) == 127
 print(part1(read_file_int("09.txt"), 25))

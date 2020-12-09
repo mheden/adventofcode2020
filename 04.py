@@ -95,8 +95,8 @@ data = [
     "hcl:#cfa07d eyr:2025 pid:166559648 iyr:2011 ecl:brn hgt:59in",
 ]
 
-assert sum([is_valid(passport) for passport in data]) == 2
-print(sum([is_valid(passport) for passport in read_file("04.txt")]))
+assert sum(is_valid(passport) for passport in data) == 2
+print(sum(is_valid(passport) for passport in read_file("04.txt")))
 
 
 print("#--- Passport Processing: part2 ---#")
@@ -115,6 +115,6 @@ valid = [
     "iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719",
 ]
 
-assert sum([is_valid2(passport) for passport in invalid]) == 0
-assert sum([is_valid2(passport) for passport in valid]) == 4
-print(sum([is_valid2(passport) for passport in read_file("04.txt")]))
+assert sum(is_valid2(passport) for passport in invalid) == 0
+assert sum(is_valid2(passport) for passport in valid) == 4
+print(sum(is_valid2(passport) for passport in read_file("04.txt")))
